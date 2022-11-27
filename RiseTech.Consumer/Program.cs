@@ -31,7 +31,7 @@ namespace RiseTech.Consumer
                 .ConfigureServices((context, services) =>
                 {
                     services.AddDbContext<PhoneBookContext>(
-                        options => options.UseNpgsql("Server=localhost;Port=5432;Database=ContactDb;User Id=postgres;Password=7F4df451mt!;"));
+                        options => options.UseNpgsql("Server=localhost;Port=5432;Database=ContactDb;User Id=postgres;Password=@Password@;"));
                     services.AddScoped<IRepositoryWrapper, RepositoryWrapper>();
                 });
 
