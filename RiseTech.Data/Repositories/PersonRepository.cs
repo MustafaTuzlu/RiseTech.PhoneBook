@@ -1,9 +1,9 @@
-﻿using Contact.API.Repositories;
-using Contact.Data.Entities;
+﻿using RiseTech.API.Repositories;
+using RiseTech.Data.Entities;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Contact.Data.Repositories
+namespace RiseTech.Data.Repositories
 {
     public class PersonRepository : RepositoryBase<Person>, IPersonRepository
     {

@@ -1,6 +1,6 @@
-﻿using Contact.API.Repositories;
+﻿using RiseTech.API.Repositories;
 
-namespace Contact.Data.Repositories.Interfaces
+namespace RiseTech.Data.Repositories.Interfaces
 {
     public interface IRepositoryWrapper
     {

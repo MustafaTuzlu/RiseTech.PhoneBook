@@ -1,8 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace Contact.Data.Migrations
+namespace RiseTech.Data.Migrations
 {
-    public partial class InfoFix : Migration
+    public partial class InfoFix : Microsoft.EntityFrameworkCore.Migrations.Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

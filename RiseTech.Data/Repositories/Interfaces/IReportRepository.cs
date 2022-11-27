@@ -1,7 +1,7 @@
-﻿using Contact.Data.Entities;
+﻿using RiseTech.Data.Entities;
 using System.Collections.Generic;
 
-namespace Contact.Data.Repositories.Interfaces
+namespace RiseTech.Data.Repositories.Interfaces
 {
     public interface IReportRepository
     {

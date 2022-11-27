@@ -2,7 +2,7 @@
 using System.Linq;
 using System.Linq.Expressions;
 
-namespace Contact.Data.Repositories.Interfaces
+namespace RiseTech.Data.Repositories.Interfaces
 {
     public interface IRepositoryBase<T>
     {
