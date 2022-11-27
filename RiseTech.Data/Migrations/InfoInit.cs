@@ -3,7 +3,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace RiseTech.Data.Migrations
 {
-    public partial class InfoInit : Microsoft.EntityFrameworkCore.Migrations.Migration
+    public partial class InfoInit : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
