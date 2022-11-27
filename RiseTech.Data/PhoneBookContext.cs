@@ -1,5 +1,5 @@
-﻿using RiseTech.Data.Entities;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
+using RiseTech.Data.Entities;
 
 namespace RiseTech.Data
 {
