@@ -1,8 +1,10 @@
-﻿using RiseTech.Data.Entities;
+﻿using Microsoft.AspNetCore.Mvc;
+using RiseTech.Data.Entities;
 using RiseTech.Data.Repositories.Interfaces;
-using Microsoft.AspNetCore.Mvc;
-using System.Collections.Generic;
+using RiseTech.Services.RabbitMQ;
+using RiseTech.Services.RabbitMQ.Models;
 using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace RiseTech.Services.Controllers
@@ -45,7 +47,12 @@ namespace RiseTech.Services.Controllers
                 _repository.Reports.CreateReport(report);
                 _repository.Save();
 
-                //Kuyruğa talep gönderilecek.
+                RabbitMQClient rabbitMqClient = new RabbitMQClient();
+                rabbitMqClient.AddReportRequestToQueue(new ReportRequestModel()
+                {
+                    Location = loc,
+                    ReportId = report.Id
+                });
 
                 return Ok(report);
             }
