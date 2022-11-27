@@ -2,7 +2,7 @@
 
 namespace RiseTech.Data.Migrations
 {
-    public partial class InfoFix : Microsoft.EntityFrameworkCore.Migrations.Migration
+    public partial class InfoFix : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

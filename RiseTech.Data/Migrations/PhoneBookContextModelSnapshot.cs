@@ -1,10 +1,9 @@
-﻿using RiseTech.Data;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using System;
 
-namespace RiseTech.Data.Migration
+namespace RiseTech.Data.Migrations
 {
     [DbContext(typeof(PhoneBookContext))]
     partial class PhoneBookContextModelSnapshot : ModelSnapshot
