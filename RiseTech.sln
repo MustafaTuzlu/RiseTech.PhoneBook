@@ -5,7 +5,9 @@ VisualStudioVersion = 17.4.33110.190
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RiseTech.Data", "RiseTech.Data\RiseTech.Data.csproj", "{9F6C9A04-C1FB-4398-967B-1079996DD0FB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RiseTech.Services", "RiseTech.Services\RiseTech.Services.csproj", "{66A6417E-90DF-4A6A-84A6-ECCA40B12E0D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RiseTech.Services", "RiseTech.Services\RiseTech.Services.csproj", "{66A6417E-90DF-4A6A-84A6-ECCA40B12E0D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RiseTech.Consumer", "RiseTech.Consumer\RiseTech.Consumer.csproj", "{AC2988A2-B9F2-4C11-9E3E-46FE29A6AE19}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{66A6417E-90DF-4A6A-84A6-ECCA40B12E0D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{66A6417E-90DF-4A6A-84A6-ECCA40B12E0D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{66A6417E-90DF-4A6A-84A6-ECCA40B12E0D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AC2988A2-B9F2-4C11-9E3E-46FE29A6AE19}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC2988A2-B9F2-4C11-9E3E-46FE29A6AE19}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC2988A2-B9F2-4C11-9E3E-46FE29A6AE19}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC2988A2-B9F2-4C11-9E3E-46FE29A6AE19}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
