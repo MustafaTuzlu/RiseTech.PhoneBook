@@ -3,6 +3,7 @@ using RiseTech.Data.Repositories.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System;
+using System.Threading.Tasks;
 
 namespace RiseTech.Services.Controllers
 {
@@ -18,16 +19,16 @@ namespace RiseTech.Services.Controllers
         }
 
         [HttpGet]
-        public ActionResult<IEnumerable<Report>> GetReports()
+        public async Task<ActionResult<IEnumerable<Report>>> GetReportsAsync()
         {
             try
             {
-                var reports = _repository.Reports.GetAllReports();
-                return Ok(reports);
+                IEnumerable<Report> reports = await _repository.Reports.GetAllReportsAsync();
+                return await Task.FromResult(Ok(reports));
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                return StatusCode(500, "Internal server error");
+                return StatusCode(500, "Internal server error Ex:" + ex.InnerException);
             }
         }
 
