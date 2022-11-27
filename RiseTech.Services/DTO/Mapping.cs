@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using Contact.Data.Entities;
+using RiseTech.Data.Entities;
 
 namespace RiseTech.Services.DTO
 {

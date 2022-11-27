@@ -1,11 +1,11 @@
-﻿using Contact.Data.Repositories.Interfaces;
+﻿using RiseTech.Data.Repositories.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Linq;
 using System.Linq.Expressions;
 
 
-namespace Contact.Data.Repositories
+namespace RiseTech.Data.Repositories
 {
     public abstract class RepositoryBase<T> : IRepositoryBase<T> where T : class
     {

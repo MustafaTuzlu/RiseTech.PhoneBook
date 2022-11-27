@@ -1,4 +1,4 @@
-using Contact.Data;
+using RiseTech.Data;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;

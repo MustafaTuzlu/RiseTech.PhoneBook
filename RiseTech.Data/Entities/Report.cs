@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Contact.Data.Entities
+namespace RiseTech.Data.Entities
 {
 
     public class Report

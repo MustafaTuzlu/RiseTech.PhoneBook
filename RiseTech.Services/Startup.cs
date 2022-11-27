@@ -1,12 +1,13 @@
-using Contact.Data;
-using Contact.Data.Repositories;
-using Contact.Data.Repositories.Interfaces;
+using RiseTech.Data;
+using RiseTech.Data.Repositories;
+using RiseTech.Data.Repositories.Interfaces;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.OpenApi.Models;
 
 namespace RiseTech.Services
 {
@@ -27,7 +28,10 @@ namespace RiseTech.Services
             services.AddScoped<IRepositoryWrapper, RepositoryWrapper>();
 
             services.AddControllers();
-            services.AddSwaggerGen();   
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "RiseTech.API", Version = "v1" });
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -35,9 +39,9 @@ namespace RiseTech.Services
         {
             if (env.IsDevelopment())
             {
-                app.UseSwagger();
-                app.UseSwaggerUI();
                 app.UseDeveloperExceptionPage();
+                app.UseSwagger();
+                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Contact.API v1"));
             }
 
             app.UseHttpsRedirection();

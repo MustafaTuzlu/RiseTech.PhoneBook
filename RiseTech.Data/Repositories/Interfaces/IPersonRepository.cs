@@ -1,7 +1,7 @@
-﻿using Contact.Data.Entities;
+﻿using RiseTech.Data.Entities;
 using System.Collections.Generic;
 
-namespace Contact.API.Repositories
+namespace RiseTech.API.Repositories
 {
     public interface IPersonRepository
     {

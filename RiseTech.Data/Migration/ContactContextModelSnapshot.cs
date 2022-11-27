@@ -1,4 +1,4 @@
-﻿using Contact.Data;
+﻿using RiseTech.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
@@ -7,7 +7,7 @@ using System;
 namespace RiseTech.Data.Migration
 {
     [DbContext(typeof(PhoneBookContext))]
-    partial class ContactContextModelSnapshot : ModelSnapshot
+    partial class PhoneBookContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)
         {

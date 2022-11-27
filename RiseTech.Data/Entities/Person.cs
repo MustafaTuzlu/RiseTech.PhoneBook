@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Contact.Data.Entities
+namespace RiseTech.Data.Entities
 {
     public class Person
     {

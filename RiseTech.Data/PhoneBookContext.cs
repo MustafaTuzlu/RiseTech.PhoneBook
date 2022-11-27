@@ -1,7 +1,7 @@
-﻿using Contact.Data.Entities;
+﻿using RiseTech.Data.Entities;
 using Microsoft.EntityFrameworkCore;
 
-namespace Contact.Data
+namespace RiseTech.Data
 {
     public class PhoneBookContext : DbContext
     {

@@ -1,5 +1,5 @@
-﻿using Contact.Data.Entities;
-using Contact.Data.Repositories.Interfaces;
+﻿using RiseTech.Data.Entities;
+using RiseTech.Data.Repositories.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System;
