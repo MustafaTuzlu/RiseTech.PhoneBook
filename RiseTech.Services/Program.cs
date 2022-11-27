@@ -1,11 +1,9 @@
+using Contact.Data;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Configuration;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using Npgsql;
 
 namespace RiseTech.Services
 {
@@ -13,7 +11,9 @@ namespace RiseTech.Services
     {
         public static void Main(string[] args)
         {
-            CreateHostBuilder(args).Build().Run();
+            var host = CreateHostBuilder(args).Build();
+            host.MigrateDatabase<Program>();
+            host.Run();
         }
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
@@ -22,5 +22,37 @@ namespace RiseTech.Services
                 {
                     webBuilder.UseStartup<Startup>();
                 });
+
+    }
+    public static class HostExtensions
+    {
+        public static IHost MigrateDatabase<TContext>(this IHost host, int? retry = 0)
+        {
+            int retryForAvailability = retry.Value;
+
+            using (var scope = host.Services.CreateScope())
+            {
+                var services = scope.ServiceProvider;
+                try
+                {
+                    using (var context = services.GetRequiredService<PhoneBookContext>())
+                    {
+                        context.Database.Migrate();
+                    }
+                }
+                catch (NpgsqlException ex)
+                {
+
+                    if (retryForAvailability < 50)
+                    {
+                        retryForAvailability++;
+                        System.Threading.Thread.Sleep(2000);
+                        MigrateDatabase<TContext>(host, retryForAvailability);
+                    }
+                }
+            }
+
+            return host;
+        }
     }
 }
