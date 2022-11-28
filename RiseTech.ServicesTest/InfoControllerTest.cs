@@ -45,6 +45,7 @@ namespace RiseTech.ServicesTest
             var infoList = list.Value as List<Info>;
         }
 
+        
         [Fact]
         public void CreateInfoTest()
         {
