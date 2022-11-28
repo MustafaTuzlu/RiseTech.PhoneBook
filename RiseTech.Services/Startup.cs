@@ -10,6 +10,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using RiseTech.Services.RabbitMQ.Interface;
 using RiseTech.Services.RabbitMQ;
+using Microsoft.AspNetCore.Http;
 
 namespace RiseTech.Services
 {
@@ -28,7 +29,7 @@ namespace RiseTech.Services
             services.AddAutoMapper(typeof(Program));
             services.AddDbContext<PhoneBookContext>(options => options.UseNpgsql(Configuration.GetConnectionString("ContactDb")));
             services.AddScoped<IRepositoryWrapper, RepositoryWrapper>();
-            
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
             services.AddControllers();
             services.AddSwaggerGen(c =>

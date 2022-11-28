@@ -93,11 +93,11 @@ namespace RiseTech.Services.Controllers
         }
 
         [HttpDelete("{id}")]
-        public ActionResult DeletePerson(int personId, int id)
+        public ActionResult DeletePerson(int personId, int infoId)
         {
             try
             {
-                Info info = _repository.Infos.GetInfoById(id);
+                Info info = _repository.Infos.GetInfoById(infoId);
                 if (info == null)
                 {
                     return NotFound();

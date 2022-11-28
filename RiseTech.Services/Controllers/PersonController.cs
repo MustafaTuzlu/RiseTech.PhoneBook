@@ -29,7 +29,7 @@ namespace RiseTech.Services.Controllers
                 var people = _repository.People.GetPeople();
                 return Ok(people);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 return StatusCode(500, "Internal server error");
             }
@@ -61,7 +61,7 @@ namespace RiseTech.Services.Controllers
         }
 
         [HttpPut("{id:int}")]
-        public IActionResult UpdatePerson(int id, [FromBody] PersonDTO personDto)
+        public ActionResult<Person> UpdatePerson(int id, [FromBody] PersonDTO personDto)
         {
             try
             {
@@ -83,7 +83,7 @@ namespace RiseTech.Services.Controllers
                 _mapper.Map(personDto, person);
                 _repository.People.UpdatePerson(person);
                 _repository.Save();
-                return NoContent();
+                return Ok(person);
             }
             catch (Exception ex)
             {
