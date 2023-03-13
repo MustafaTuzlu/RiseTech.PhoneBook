@@ -16,7 +16,7 @@ namespace RiseTech.Data
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseNpgsql("Server=localhost;Port=5432;Database=ContactDb;User Id=postgres;Password=7F4df451mt!;");
+                optionsBuilder.UseNpgsql("Server=localhost;Port=5432;Database=ContactDb;User Id=postgres;Password=xxxx;");
             }
             base.OnConfiguring(optionsBuilder); 
         }
